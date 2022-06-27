@@ -1,6 +1,6 @@
 const initialState = {
     users: [],
-    loading: false
+    loading: true
 }
 
 export default function users(state = initialState, action) {
