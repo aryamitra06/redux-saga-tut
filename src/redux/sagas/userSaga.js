@@ -9,7 +9,7 @@ const api = "https://jsonplaceholder.typicode.com/users"
 function* fetchUsers() {
     try{
         const users = yield call(()=>axios.get(api))
-        yield put({ type: 'GET_USERS_SUCCESS', users: users })
+        yield put({ type: 'GET_USERS_SUCCESS', payload: users })
     }
     catch(e){
         console.log(e);
