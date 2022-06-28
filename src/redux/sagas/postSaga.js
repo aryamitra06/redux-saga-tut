@@ -8,6 +8,7 @@ import axios from 'axios';
 
 function* fetchPost(action) {
     try{
+        console.log(action.payload);
         const post = yield call(()=>axios.get(`https://jsonplaceholder.typicode.com/posts/${action.payload}`))
         yield put({ type: 'GET_POST_SUCCESS', payload: post })
     }
