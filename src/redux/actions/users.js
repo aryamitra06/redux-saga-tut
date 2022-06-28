@@ -1,6 +1,5 @@
-export function getUsers(state) {
+export function getUsers() {
     return {
-        type: "GET_USERS_REQUESTED",
-        payload: state
+        type: "GET_USERS_REQUESTED"
     }
 }
