@@ -6,10 +6,9 @@ import axios from 'axios';
 
 //saga generators
 
-function* fetchPost(action) {
+function* fetchPost({id}) {
     try{
-        console.log(action.payload);
-        const post = yield call(()=>axios.get(`https://jsonplaceholder.typicode.com/posts/${action.payload}`))
+        const post = yield call(()=>axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`))
         yield put({ type: 'GET_POST_SUCCESS', payload: post })
     }
     catch(e){

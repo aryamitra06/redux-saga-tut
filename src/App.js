@@ -7,16 +7,20 @@ function App() {
 
 
   React.useEffect(() => {
-    dispatch(getUsers())
+    dispatch({
+        type: "GET_USERS_REQUESTED"
+    })
   }, [dispatch])
 
   const users = useSelector(state => state.users);
   const post = useSelector(state => state.post);
 
 
-
   const handlePost = () => {
-    dispatch(getPost(3))
+    dispatch({
+        type: "GET_POST_REQUESTED",
+        id: id
+    })
   }
 
   return (
